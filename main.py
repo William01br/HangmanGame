@@ -1,6 +1,7 @@
 import os
 from logic import make_archiv, game, adds_players_in_ranking, show_ranking, show_words, show_credits
 
+# Creates the "players", "ranking", "words" folders in the same directory as the main.py file.
 while True:
     if os.path.exists("./players") and os.path.exists("./ranking") and os.path.exists("./words"):
         break

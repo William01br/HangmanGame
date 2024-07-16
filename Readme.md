@@ -23,7 +23,7 @@ To run the file, you just need to have Python installed on the operating system 
 
 To run it in the terminal, type "python -V" and see the version of python installed on your OS. If the version appears, it means it is installed. In the terminal, go to the folder where the file is and type:
 
-If you are using Windows/Mac os:
+If you are using Windows:
 ```bash
 py main.py
 ```
@@ -32,7 +32,7 @@ or
 python main.py
 ```
 
-If you are using Linux:
+If you are using Linux/Mac OS:
 ```bash
 python3 main.py
 ```

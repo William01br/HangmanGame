@@ -6,14 +6,17 @@ list_ranking = []
 list_words = []
 player_data_list = []
 
+def update_json(file_path, list_data):
+    with open(file_path, "w") as file_object:
+            json.dump(list_data, file_object)
+
 def make_archiv(name, file_path):
     """Makes a archiv with informations of player."""
     if os.path.exists(file_path):
         print(f"Welcome back {name}!")
     else:
         list_ranking.append({"name": name, "pontuation": 0})
-        with open(file_path, "w") as file_object:
-            json.dump(list_ranking, file_object)
+        update_json(file_path, list_ranking)
 
 
 def show_words(file_path_words):
@@ -42,8 +45,7 @@ def adds_players_in_ranking(home_folder, final_file_path):
 
         for dic in user_data:
             player_data_list.append(dic)
-            with open(final_file_path, 'w') as f_object:
-                json.dump(player_data_list, f_object)
+            update_json(final_file_path, player_data_list)
 
 
 def show_ranking(file_path):
@@ -101,8 +103,7 @@ def game(name, file_path, file_path_words):
                 for player in list_players_json:
                     if player["name"] == name:
                         player["pontuation"] += 1
-                        with open(file_path, "w") as file_object:
-                            json.dump(list_players_json, file_object)
+                        update_json(file_path, list_players_json)
             break
         
         # Valids the letter or word.
@@ -130,8 +131,7 @@ def game(name, file_path, file_path_words):
                     for player in list_players_json:
                         if player["name"] == name:
                             player["pontuation"] += 1
-                            with open(file_path, "w") as file_object:
-                                json.dump(list_players_json, file_object)
+                            update_json(file_path, list_players_json)
                 break
             else:
                 print("\n. \n. \n. \n")

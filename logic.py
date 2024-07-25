@@ -1,5 +1,6 @@
 import os
 import json
+import platform
 
 
 list_ranking = []
@@ -83,7 +84,13 @@ def game(name, file_path, file_path_words):
 
             
     theme = input("Enter the theme: ")
-    os.system('cls') or None
+    
+    # Cleans the terminal
+    system_ =  platform.system()
+    if system_ == "Windows":
+        os.system("cls") or None
+    else:
+        os.system("clear") or None
 
     word_size = len(secret_word)
     hidden_word = ['-'] * word_size
